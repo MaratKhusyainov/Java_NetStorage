@@ -1,27 +1,34 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>CloudStorageIO</artifactId>
-        <groupId>com.geekbrains.cloudio</groupId>
-        <version>1</version>
+        <artifactId>Java_NetStorage</artifactId>
+        <groupId>org.example</groupId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>netty_server</artifactId>
+    <artifactId>Client</artifactId>
+
     <dependencies>
         <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>13</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.geekbrains.cloudio</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>client</artifactId>
             <version>1</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.45</version>
         </dependency>
     </dependencies>
 
@@ -42,7 +49,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>NettyBaseServer</mainClass>
+                            <mainClass>Client</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -52,7 +59,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>NettyBaseServer</mainClass>
+                            <mainClass>Client</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -69,8 +76,17 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.1</version>
+                <configuration>
+                    <mainClass>Client</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
 
 
 </project>
