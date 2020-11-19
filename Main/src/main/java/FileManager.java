@@ -54,6 +54,7 @@ public class FileManager {
             }
             this.path = path.getParent().toString();
 
+
         } catch (IOException e) {
             throw new RuntimeException("Unable to create file info from path");
         }

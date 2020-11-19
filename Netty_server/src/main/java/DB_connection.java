@@ -15,9 +15,9 @@ public class DB_connection {
         String db = rb.getString("db");
         String user = rb.getString("user");
         String password = rb.getString("password");
-
         String jdbcURL = MessageFormat.format("jdbc:mysql://{0}:{1}/{2}", host, port, db);
         conn = DriverManager.getConnection(jdbcURL, user, password);
+        System.out.println("connection");
     }
 
     public static DB_connection getInstance() {

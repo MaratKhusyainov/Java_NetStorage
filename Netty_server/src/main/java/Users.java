@@ -1,20 +1,15 @@
-import
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 public class Users {
-    public List<UserEntity> usersList;
     private PreparedStatement ps;
 
     public Users() {
     }
 
-
     public String getNick(String login, String password) throws SQLException {
-        String select = String.format("SELECT nick FROM users WHERE login = '%s' and password = '%s'", login, password);
+        String select = String.format("SELECT nick FROM clients WHERE login = '%s' and password = '%s'", login, password);
         try {
             ps = DB_connection.getInstance()
                     .connection()
@@ -36,7 +31,7 @@ public class Users {
         try {
             ps = DB_connection.getInstance()
                     .connection()
-                    .prepareStatement("INSERT INTO users (nick, login, password) VALUES (?,?,?)");
+                    .prepareStatement("INSERT INTO clients (nick, login, password) VALUES (?,?,?)");
             ps.setString(1, nick);
             ps.setString(2, login);
             ps.setString(3, password);
@@ -48,23 +43,5 @@ public class Users {
             return "false";
         }
     }
-
-    public class UserEntity {
-        private String login;
-        private String password;
-        private String rooth;
-
-        public void setLogin(String login) {
-            this.login = login;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public void setRooth(String rooth) {
-            this.rooth = rooth;
-        }
-
-    }
 }
+

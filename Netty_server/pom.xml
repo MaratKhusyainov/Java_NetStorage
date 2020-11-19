@@ -1,28 +1,34 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>CloudStorageIO</artifactId>
-        <groupId>com.geekbrains.cloudio</groupId>
-        <version>1</version>
+        <artifactId>Java_NetStorage</artifactId>
+        <groupId>org.example</groupId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>netty_server</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.geekbrains.cloudio</groupId>
-            <artifactId>common</artifactId>
-            <version>1</version>
+            <groupId>org.example</groupId>
+            <artifactId>Main</artifactId>
+            <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.45</version>
+        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -42,7 +48,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>NettyBaseServer</mainClass>
+                            <mainClass>NettyServer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -52,7 +58,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>NettyBaseServer</mainClass>
+                            <mainClass>NettyServer</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -71,6 +77,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

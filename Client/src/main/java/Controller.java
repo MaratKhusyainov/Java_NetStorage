@@ -29,7 +29,7 @@ public class Controller implements Initializable {
     public TextField pathFieldRight;
 
 
-    private Path path = Paths.get("client", "ClientStorage");
+    private Path path = Paths.get("Client", "ClientStorage");
     private final String PATH = path.toString();
     private ContextMenu contextMenu = new ContextMenu();
     private String currentUserNick;
@@ -69,7 +69,7 @@ public class Controller implements Initializable {
                     storageTable.getItems().clear();
                     List<FileManager> list = lm.getFilesList();
                     list.forEach(f -> storageTable.getItems().add(f));
-                    list.forEach(s -> pathFieldRight.setText(s.getPath()));
+                    list.forEach(s->pathFieldRight.setText(s.getPath()));// не работает почему то эта строчка
                 });
             }
             if (o instanceof FileMessage) {
@@ -110,11 +110,8 @@ public class Controller implements Initializable {
     }
 
     private void requestToUpdateStorageFilesList(String s) {
-        if (!storageTable.isFocused()) {
+        System.out.println(s);
             Network.getInstance().sendMessage(new CommandMessage(Command.STORAGE_FILES_LIST, s));
-        } else {
-            Network.getInstance().sendMessage(new CommandMessage(Command.STORAGE_FILES_LIST, s));
-        }
     }
 
     private void requestToUpdateStorageDirectoryList() {

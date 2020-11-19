@@ -4,9 +4,9 @@ import io.netty.channel.SimpleChannelInboundHandler;
 
 public class ClientHandler extends SimpleChannelInboundHandler<AbstractMessage> {
 
-    private Callback callback;
+    private CallBack callback;
 
-    public void setCallback(Callback callback) {
+    public void setCallback(CallBack callback) {
         this.callback = callback;
     }
 

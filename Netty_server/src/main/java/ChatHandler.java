@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.nio.file.*;
 
 public class ChatHandler extends SimpleChannelInboundHandler<AbstractMessage> {
-    private Path path = Paths.get("server", "ServerStorage");
+    private Path path = Path.of("cloud", "ServerStorage");
     private final String PATH = path.toString();
     private Users u = new Users();
     private String nick;
@@ -38,7 +38,6 @@ public class ChatHandler extends SimpleChannelInboundHandler<AbstractMessage> {
                     break;
                 case SIGN_UP:
                     String s = u.addNick(cm.getParam(), cm.getSecondParam(), cm.getThirdParam());
-                    System.out.println(s);
                     ctx.writeAndFlush(new CommandMessage(Command.SIGN_UP, s));
                     break;
                 case STORAGE_FILES_LIST:

@@ -20,7 +20,7 @@ public class NettyServer {
                 protected void initChannel(Channel channel) {
                     channel.pipeline().addLast(new ObjectDecoder(ClassResolvers.cacheDisabled(null)),
                             new ObjectEncoder(),
-                            new ChatMessegHandler()
+                            new ChatHandler()
                     );
                 }
             });
@@ -36,7 +36,7 @@ public class NettyServer {
     }
 
     public static void main(String[] args) {
-        new NettyBaseServer();
+        new NettyServer();
     }
     }
-}
+

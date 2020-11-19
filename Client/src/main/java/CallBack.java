@@ -1,3 +1,4 @@
+
 public interface CallBack {
-    void callback(AbstractMessage msg);
+    void callback (AbstractMessage msg);
 }
