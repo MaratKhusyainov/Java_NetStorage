@@ -69,7 +69,7 @@ public class Controller implements Initializable {
                     storageTable.getItems().clear();
                     List<FileManager> list = lm.getFilesList();
                     list.forEach(f -> storageTable.getItems().add(f));
-                    list.forEach(s->pathFieldRight.setText(s.getPath()));// не работает почему то эта строчка
+                    list.forEach(s->pathFieldRight.setText(s.getPath()));
                 });
             }
             if (o instanceof FileMessage) {
@@ -112,7 +112,9 @@ public class Controller implements Initializable {
     private void requestToUpdateStorageFilesList(String s) {
         System.out.println(s);
             Network.getInstance().sendMessage(new CommandMessage(Command.STORAGE_FILES_LIST, s));
+       
     }
+
 
     private void requestToUpdateStorageDirectoryList() {
         Network.getInstance().sendMessage(new CommandMessage(Command.DIRECTORY_FILES_LIST));
