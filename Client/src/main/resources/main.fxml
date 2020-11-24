@@ -27,7 +27,7 @@
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@dropbox.png" />
+                  <Image url="@Cloud.png" />
                </image>
                <VBox.margin>
                   <Insets left="420.0" right="420.0" top="50.0" />
